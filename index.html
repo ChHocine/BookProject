@@ -3,44 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookShop</title>
+    <title>Find Answers Backed by History and Religion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>BookShop</h1>
+        <h1>Find Answers Backed by History and Religion</h1>
+        <p>Ask any question, and get answers directly sourced from credible books.</p>
+        <a href="#ask-question" class="cta-button">Start Now</a>
     </header>
 
-    <main>
-        <h2>Our Bestselling Books</h2>
-        
-        <div class="book-card">
-            <img src="book1.jpg" alt="Book 1">
-            <h3>Book Title 1</h3>
-            <p>A short description of the book.</p>
-            <p class="price">$19.99</p>
-            <button>Buy Now</button>
+    <!-- Featured Books Section -->
+    <section id="featured-books">
+        <h2>Our Featured Books</h2>
+        <div class="book-container">
+            <div class="book">
+                <img src="book1.jpg" alt="Book 1">
+                <h3>History of the World</h3>
+                <p>A comprehensive guide to world history.</p>
+            </div>
+            <div class="book">
+                <img src="book2.jpg" alt="Book 2">
+                <h3>The Bible and Religion</h3>
+                <p>Understanding religion through the lens of the Bible.</p>
+            </div>
+            <div class="book">
+                <img src="book3.jpg" alt="Book 3">
+                <h3>The Quran's Teachings</h3>
+                <p>Insights into life from the Quran and Islamic teachings.</p>
+            </div>
         </div>
-        
-        <div class="book-card">
-            <img src="book2.jpg" alt="Book 2">
-            <h3>Book Title 2</h3>
-            <p>A short description of the book.</p>
-            <p class="price">$25.99</p>
-            <button>Buy Now</button>
-        </div>
-        
-        <div class="book-card">
-            <img src="book3.jpg" alt="Book 3">
-            <h3>Book Title 3</h3>
-            <p>A short description of the book.</p>
-            <p class="price">$15.99</p>
-            <button>Buy Now</button>
-        </div>
-    </main>
+    </section>
 
+    <!-- Ask a Question Section -->
+    <section id="ask-question">
+        <h2>Have a Question?</h2>
+        <form id="question-form">
+            <label for="question">Ask your question:</label>
+            <textarea id="question" placeholder="Type your question here..." required></textarea>
+            <button type="submit" class="cta-button">Get Answer</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 BookShop. All rights reserved.</p>
+        <p>Powered by History and Religion Knowledge Base</p>
+        <p>Contact: info@bookanswers.com</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
