@@ -18,8 +18,9 @@ once is requested we will add you as collaborators and you will be able to add y
 
 ## Step 3: Clone the Repository
 To make changes to the code, you will need to clone the repository to your local device. You can do this by running the following command in your terminal:
-
+   ```bash
 git clone https://github.com/ChHocine/BookProject
+   ```
 This will create a local copy of the repository on your device, where you can make changes and test them before pushing them back to the remote repository.
 
 ## Contact
