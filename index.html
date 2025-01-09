@@ -3,45 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Book Reply - Find Answers</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>BookReply</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
 <body>
-    <header>
-        <h1>Find Answers with Book Reply</h1>
-        <p>Ask any question and get answers directly sourced from books.</p>
-    </header>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Brand and Icon -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/book-icon.svg" alt="Logo" class="d-inline-block align-text-top" style="height: 30px;"> Bookreply
+            </a>
 
-    <section id="book-list">
-        <h2>Our Books</h2>
-        <div class="book">
-            <h3>Book 1</h3>
-            <p>Book Description</p>
+            <!-- Navbar toggler (Mobile view) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#what-it-is">What is BookReply?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="book">
-            <h3>Book 2</h3>
-            <p>Book Description</p>
+    </nav>
+
+    <!-- Hero Section -->
+<!-- Hero Section -->
+<div class="hero-section d-flex align-items-center">
+    <div class="col-md-6 p-lg-5 mx-auto text-end me-3 ">
+        <h1 class="display-3 fw-bold text-dark">Unlock the Power of Books with AI-Driven Insights</h1>
+        <p class="text-dark">Your personal AI assistant for in-depth, context-rich answers—straight from the pages of your favorite books.</p>
+        <h2 class="fw-normal mb-3 text-dark">Bookreply: Your AI Assistant that Understands Books, Not the Web</h2>
+        <p class="text-dark">Dive deep into any book and get insightful, context-based responses—without any reliance on internet searches.</p>
+    </div>
+</div>
+
+
+
+    <!-- Information Section -->
+    <div class="info-section" id="what-it-is">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2>What is BookReply?</h2>
+                    <p>Bookreply is an advanced AI assistant that reads and understands the content of books to provide you with tailored answers, summaries, and insights. 
+                        Say goodbye to vague search engine results, and get responses rooted in the actual text.</p>
+                    <ul>
+                        <li><b class="fw-bold">Contextual Responses:</b> Get answers based on what’s in the book—not external data.</li>
+                        <li><b>Tailored Insights:</b> Whether you're looking for specific quotes, thematic analysis, 
+                            or general overviews, Bookreply tailors its responses to your needs.</li>
+                        <li><b>Accuracy Over Guesswork:</b> Unlike typical AI tools, Bookreply doesn’t pull from random online sources. Everything is based on the book itself.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://img.freepik.com/free-photo/still-life-books-versus-technology_23-2150062971.jpg?t=st=1733933269~exp=1733936869~hmac=90362dcdca1ab5137b76c265504e37a051a2627aa4d3e028b47d9832cf809712&w=1380" alt="Illustration">
+                   
+                </div>
+            </div>
         </div>
-        <div class="book">
-            <h3>Book 3</h3>
-            <p>Book Description</p>
+    </div>
+
+    <div class="key-features" id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-container">
+                <!-- Feature 1 -->
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="assets/book-analysis.svg" alt="book analysis" style="height: 50px;">
+                    </div>
+                    <h4>AI-Powered Book Analysis</h4>
+                    <p>Analyze any book in your library and generate relevant responses based on the book's content.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="assets/knowledge1.svg" alt="book analysis" style="height: 50px;">
+                    </div>
+                    <h4>Deep Knowledge & Context</h4>
+                    <p>Get precise answers, summaries, and insights with deep understanding of the material, 
+                        ensuring all information is contextually relevant.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="assets/query.svg" alt="book analysis" style="height: 50px;">
+                    </div>
+                    <h4>Customizable Queries</h4>
+                    <p>Ask specific questions about plot details, character development, themes, 
+                        and much more, and receive answers grounded in the book's content..</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="assets/internet.svg" alt="book analysis" style="height: 50px;">
+                    </div>
+                    <h4>No Need for Internet Searches</h4>
+                    <p>Forget about external data; Bookreply works exclusively from the material of the book itself,
+                         ensuring focused and accurate insights.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="assets/books.svg" alt="book analysis" style="height: 50px;">
+                    </div>
+                    <h4>Multi-Genre Support</h4>
+                    <p>From fiction to non-fiction, textbooks to self-help, Bookreply supports all genres and 
+                        offers unique insights tailored to each.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="ask-question">
-        <h2>Ask a Question</h2>
-        <form id="question-form">
-            <input type="text" id="question" placeholder="Enter your question here" required>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
 
-    <footer>
-        <p>Powered by Book Reply</p>
-        <p>Contact: <a href="mailto:info@bookreply.com">info@bookreply.com</a></p>
-    </footer>
+    <!-- How It Works Section -->
+    <div class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works?</h2>
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-box">
+                    <div class="step-icon">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <h4>Step 1: Upload Your Book or Choose from Our Library</h4>
+                    <p>Upload a book in any format or choose from our growing library of pre-loaded books.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-box">
+                    <div class="step-icon">
+                        <i class="bi bi-search-heart"></i>
+                    </div>
+                    <h4>Step 2: Ask Your Question</h4>
+                    <p>Whether you’re curious about character motivations or the historical context of a passage, simply ask.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-box">
+                    <div class="step-icon">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <h4>Step 3: Get AI-Powered Answers</h4>
+                    <p>Receive accurate, context-rich responses based solely on the content within the book, without external data or bias.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="benefits-section" id="benefits">
+        <div class="container">
+            <h2>Benefits</h2>
+            
+            <!-- Benefit 1-2-->
+            <div class="row featurette mx-auto col-8">
+                <div class="col-md">
+                    <div class="icon-container d-flex align-items-center justify-content-center">
+                        <img src="assets/target.svg" alt="precision" style="height: 100px;">
+                    </div> <br>
+                    
+                    <h2 class="featurette-heading fw-normal lh-1">Precision</h2>
+                    <p class="lead">Get accurate, book-specific answers that traditional search engines can't provide.</p>
+                </div>
+
+                    <div class="col-md">
+                        <div class="icon-container d-flex align-items-center justify-content-center">
+                            <img src="assets/pages.svg" alt="precision" style="height: 100px;">
+                        </div>
+                        <br>
+                        <h2 class="featurette-heading fw-normal lh-1">Convenience</h2>
+                        <p class="lead">No need to sift through pages or open multiple sources. Bookreply does the heavy lifting for you.</p>
+                    </div>
+                
+            </div>
+
+            
+            <!-- Benefit 3-4 -->
+            <div class="row featurette mx-auto col-8">
+                <div class="col-md">
+                    <div class="icon-container d-flex align-items-center justify-content-center">
+                        <img src="assets/learning.svg" alt="precision" style="height: 100px;">
+                    </div>
+                    <h2 class="featurette-heading fw-normal lh-1">Enhanced Learning</h2>
+                    <p class="lead">Ideal for students, researchers, and avid readers looking to deepen their understanding of a text.</p>
+                </div>
+
+                <div class="col-md">
+                    <div class="icon-container d-flex align-items-center justify-content-center">
+                        <img src="assets/analyse.svg" alt="precision" style="height: 100px;">
+                    </div>
+                    <h2 class="featurette-heading fw-normal lh-1">AI-Driven Expertise</span></h2>
+                    <p class="lead"> Leverage the power of AI, fine-tuned to analyze and interpret literature, offering insights beyond a simple summary.</p>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!--Call to action-->
+    <div class="container mt-3">
+        <div class="p-5 text-center bg-body-tertiary rounded-3 jumbotron">
+          <h1 class="text-body-emphasis">Start Exploring Books Like Never Before!</h1>
+          <p class="col-lg-8 mx-auto fs-5 text-muted">
+            Learn More – Discover how Bookreply can help you achieve your reading and learning goals.
+            You don't need to sign-up for using BookReply, try now!
+          </p>
+          <div class="d-inline-flex gap-2 mb-5">
+            <button class="d-inline-flex align-items-center btn btn-light btn-lg px-4 rounded-pill" type="button">
+             Start Chat
+            </button>
+          </div>
+        </div>
+      </div>
+
+    
+      <!--Footer-->
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="#features" class="nav-link px-2 text-body-secondary">Features</a></li>
+          <li class="nav-item"><a href="#how-it-works" class="nav-link px-2 text-body-secondary">How It Works</a></li>
+          <li class="nav-item"><a href="#benefits" class="nav-link px-2 text-body-secondary">Benefits</a></li>
+        </ul>
+          <p class="text-center">&copy; 2024 BookReply. All Rights Reserved.</p>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
