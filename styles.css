@@ -1,0 +1,122 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.files-panel {
+    width: 30%;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.files-panel h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.files-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.files-panel ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #555;
+}
+
+.files-panel ul li:last-child {
+    border-bottom: none;
+}
+
+.chat-container {
+    width: 70%;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.message {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.message.success {
+    color: #28a745;
+}
+
+.message.error {
+    color: #dc3545;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-container form {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+.form-container label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #001;
+    border-radius: 4px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-container button:hover {
+    background-color: #03045e;
+}
