@@ -2,7 +2,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(this);
 
-    fetch('upload.php', {
+    fetch('admin_page_upload.php', {
         method: 'POST',
         body: formData
     })
