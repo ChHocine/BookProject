@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Panel with extracted files -->
+        <div class="files-panel">
+            <h2>Extracted Files</h2>
+            <ul id="files">
+                <!-- List items dynamically updated by JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Chat-style upload form and messages -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Chat messages dynamically added here -->
+            </div>
+
+            <div class="form-container">
+                <form id="uploadForm">
+                    <label for="pdfFile">Choose a PDF file:</label>
+                    <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
