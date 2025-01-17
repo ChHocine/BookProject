@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="admin_page_styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Log Out button -->
+    <div class="logout-container">
+        <button id="logoutBtn">Log Out</button>
+    </div>
+
     <div class="container">
         <!-- Panel with extracted files -->
         <div class="files-panel">
@@ -32,6 +37,16 @@
             </div>
         </div>
     </div>
-    <script src="admin_page_script.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+        if (!sessionStorage.getItem('isAdmin')) {
+            window.location.href = 'admin_page_login.html';
+        }
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            sessionStorage.removeItem('isAdmin'); 
+            window.location.href = 'admin_page_login.html'; 
+        });
+    </script>
 </body>
 </html>
