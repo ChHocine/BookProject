@@ -7,7 +7,31 @@ body {
     height: 100vh;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
+
+.logout-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.logout-container button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.logout-container button:hover {
+    background-color: #c82333;
+}
+
 
 .container {
     display: flex;
@@ -20,7 +44,7 @@ body {
 
 .files-panel {
     width: 30%;
-    background-color: #ffffff;
+    background-color: #fff;
     border-right: 1px solid #ddd;
     padding: 20px;
     overflow-y: auto;
