@@ -1,248 +1,481 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookReply</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      .sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  overflow: visible; /* parent overflow özelliği etkileyebilir */
+}
+.hero-image {
+  width: 560px;  /* Genişlik: Dikdörtgen için uygun boyut */
+  height: 500px;  /* Yükseklik: Dikeyde de kontrol sağlıyoruz */
+}
+</style>
+</head>
+
 <body>
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <!-- Brand and Icon -->
-            <a class="navbar-brand" href="#">
-                <img src="assets/book-icon.svg" alt="Logo" class="d-inline-block align-text-top" style="height: 30px;"> Bookreply
-            </a>
+<!-- Navbar -->
+<nav class="bg-white text-black shadow-md py-4 fixed w-full top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+    <!-- Logo ve Marka Adı -->
+    <a href="#" class="flex items-center space-x-2 text-2xl font-semibold">
+      <img src="assets/book-heart-love-svgrepo-com.svg" alt="Logo" class="h-8 w-auto" />
+      <span>BookReply</span>
+    </a>
 
-            <!-- Navbar toggler (Mobile view) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#what-it-is">What is BookReply?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#benefits">Benefits</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-<!-- Hero Section -->
-<div class="hero-section d-flex align-items-center">
-    <div class="col-md-6 p-lg-5 mx-auto text-end me-3 ">
-        <h1 class="display-3 fw-bold text-dark">Unlock the Power of Books with AI-Driven Insights</h1>
-        <p class="text-dark">Your personal AI assistant for in-depth, context-rich answers—straight from the pages of your favorite books.</p>
-        <h2 class="fw-normal mb-3 text-dark">Bookreply: Your AI Assistant that Understands Books, Not the Web</h2>
-        <p class="text-dark">Dive deep into any book and get insightful, context-based responses—without any reliance on internet searches.</p>
-    </div>
-</div>
-
-
-
-    <!-- Information Section -->
-    <div class="info-section" id="what-it-is">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2>What is BookReply?</h2>
-                    <p>Bookreply is an advanced AI assistant that reads and understands the content of books to provide you with tailored answers, summaries, and insights. 
-                        Say goodbye to vague search engine results, and get responses rooted in the actual text.</p>
-                    <ul>
-                        <li><b class="fw-bold">Contextual Responses:</b> Get answers based on what’s in the book—not external data.</li>
-                        <li><b>Tailored Insights:</b> Whether you're looking for specific quotes, thematic analysis, 
-                            or general overviews, Bookreply tailors its responses to your needs.</li>
-                        <li><b>Accuracy Over Guesswork:</b> Unlike typical AI tools, Bookreply doesn’t pull from random online sources. Everything is based on the book itself.</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://img.freepik.com/free-photo/still-life-books-versus-technology_23-2150062971.jpg?t=st=1733933269~exp=1733936869~hmac=90362dcdca1ab5137b76c265504e37a051a2627aa4d3e028b47d9832cf809712&w=1380" alt="Illustration">
-                   
-                </div>
-            </div>
-        </div>
+    <!-- Orta Kısım Linkler -->
+    <div class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-gray-300">Home</a>
+      <a href="#" class="hover:text-gray-300">About</a>
+      <a href="#features" class="hover:text-gray-300">Features</a>
+      <a href="#how-it-works" class="hover:text-gray-300">How it works?</a>
+      <a href="#FAQs" class="hover:text-gray-300">FAQs</a>
     </div>
 
-    <div class="key-features" id="features">
-        <div class="container">
-            <h2>Key Features</h2>
-            <div class="feature-container">
-                <!-- Feature 1 -->
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <img src="assets/book-analysis.svg" alt="book analysis" style="height: 50px;">
-                    </div>
-                    <h4>AI-Powered Book Analysis</h4>
-                    <p>Analyze any book in your library and generate relevant responses based on the book's content.</p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <img src="assets/knowledge1.svg" alt="book analysis" style="height: 50px;">
-                    </div>
-                    <h4>Deep Knowledge & Context</h4>
-                    <p>Get precise answers, summaries, and insights with deep understanding of the material, 
-                        ensuring all information is contextually relevant.</p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <img src="assets/query.svg" alt="book analysis" style="height: 50px;">
-                    </div>
-                    <h4>Customizable Queries</h4>
-                    <p>Ask specific questions about plot details, character development, themes, 
-                        and much more, and receive answers grounded in the book's content..</p>
-                </div>
-                <!-- Feature 4 -->
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <img src="assets/internet.svg" alt="book analysis" style="height: 50px;">
-                    </div>
-                    <h4>No Need for Internet Searches</h4>
-                    <p>Forget about external data; Bookreply works exclusively from the material of the book itself,
-                         ensuring focused and accurate insights.</p>
-                </div>
-                <!-- Feature 5 -->
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <img src="assets/books.svg" alt="book analysis" style="height: 50px;">
-                    </div>
-                    <h4>Multi-Genre Support</h4>
-                    <p>From fiction to non-fiction, textbooks to self-help, Bookreply supports all genres and 
-                        offers unique insights tailored to each.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Sağda Login ve Sign Up Butonları -->
+    <div class="flex space-x-4">
+      <a
+        href="https://signin-page-by-asomiddin.netlify.app/"
+        class="text-black border border-black px-4 py-2 rounded-md hover:bg-gray-100"
+      >Sign Up</a>
+      <a
+        href="http://nastassia.scienceontheweb.net/BookReply/choose_login.html"
+        class="text-white bg-black px-6 py-2 rounded-md hover:bg-gray-800"
+      >Login</a>
     </div>
+  </div>
+</nav>
 
-
-    <!-- How It Works Section -->
-    <div class="how-it-works" id="how-it-works">
-        <div class="container">
-            <h2>How It Works?</h2>
-            <div class="steps-container">
-                <!-- Step 1 -->
-                <div class="step-box">
-                    <div class="step-icon">
-                        <i class="bi bi-person-circle"></i>
-                    </div>
-                    <h4>Step 1: Upload Your Book or Choose from Our Library</h4>
-                    <p>Upload a book in any format or choose from our growing library of pre-loaded books.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="step-box">
-                    <div class="step-icon">
-                        <i class="bi bi-search-heart"></i>
-                    </div>
-                    <h4>Step 2: Ask Your Question</h4>
-                    <p>Whether you’re curious about character motivations or the historical context of a passage, simply ask.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="step-box">
-                    <div class="step-icon">
-                        <i class="bi bi-check-circle"></i>
-                    </div>
-                    <h4>Step 3: Get AI-Powered Answers</h4>
-                    <p>Receive accurate, context-rich responses based solely on the content within the book, without external data or bias.</p>
-                </div>
-            </div>
-        </div>
+<!--hero section-->
+<header class="mt-20">
+  <!-- Hero Top -->
+  <div class="relative bg-gradient-to-bl from-blue-50 via-white to-gray-50 h-screen overflow-hidden">
+    <!-- Decorative Shapes -->
+    <div class="absolute inset-0 z-0">
+      <!-- Abstract Blob -->
+      <div class="absolute top-10 left-20 w-72 h-72 bg-gradient-to-r from-indigo-300 via-purple-200 to-pink-300 rounded-full opacity-70 blur-3xl"></div>
+      <!-- Wave Shape -->
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-r from-indigo-50 to-purple-100 transform translate-y-1/2 skew-y-6"></div>
+      <!-- Floating Circle -->
+      <div class="absolute top-1/3 right-10 w-32 h-32 bg-pink-200 rounded-full opacity-50 blur-2xl"></div>
+      <!-- Dotted Pattern -->
+      <div class="absolute top-16 right-40">
+        <svg class="h-20 w-20 text-gray-300 opacity-50" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <circle cx="10" cy="10" r="3" fill="currentColor" />
+          <circle cx="30" cy="10" r="3" fill="currentColor" />
+          <circle cx="50" cy="10" r="3" fill="currentColor" />
+          <circle cx="10" cy="30" r="3" fill="currentColor" />
+          <circle cx="30" cy="30" r="3" fill="currentColor" />
+          <circle cx="50" cy="30" r="3" fill="currentColor" />
+        </svg>
+      </div>
     </div>
-
-    <div class="benefits-section" id="benefits">
-        <div class="container">
-            <h2>Benefits</h2>
-            
-            <!-- Benefit 1-2-->
-            <div class="row featurette mx-auto col-8">
-                <div class="col-md">
-                    <div class="icon-container d-flex align-items-center justify-content-center">
-                        <img src="assets/target.svg" alt="precision" style="height: 100px;">
-                    </div> <br>
-                    
-                    <h2 class="featurette-heading fw-normal lh-1">Precision</h2>
-                    <p class="lead">Get accurate, book-specific answers that traditional search engines can't provide.</p>
-                </div>
-
-                    <div class="col-md">
-                        <div class="icon-container d-flex align-items-center justify-content-center">
-                            <img src="assets/pages.svg" alt="precision" style="height: 100px;">
-                        </div>
-                        <br>
-                        <h2 class="featurette-heading fw-normal lh-1">Convenience</h2>
-                        <p class="lead">No need to sift through pages or open multiple sources. Bookreply does the heavy lifting for you.</p>
-                    </div>
-                
-            </div>
-
-            
-            <!-- Benefit 3-4 -->
-            <div class="row featurette mx-auto col-8">
-                <div class="col-md">
-                    <div class="icon-container d-flex align-items-center justify-content-center">
-                        <img src="assets/learning.svg" alt="precision" style="height: 100px;">
-                    </div>
-                    <h2 class="featurette-heading fw-normal lh-1">Enhanced Learning</h2>
-                    <p class="lead">Ideal for students, researchers, and avid readers looking to deepen their understanding of a text.</p>
-                </div>
-
-                <div class="col-md">
-                    <div class="icon-container d-flex align-items-center justify-content-center">
-                        <img src="assets/analyse.svg" alt="precision" style="height: 100px;">
-                    </div>
-                    <h2 class="featurette-heading fw-normal lh-1">AI-Driven Expertise</span></h2>
-                    <p class="lead"> Leverage the power of AI, fine-tuned to analyze and interpret literature, offering insights beyond a simple summary.</p>
-                </div>  
-            </div>
-        </div>
+    <!-- Content -->
+    <div class="relative z-10 mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20 h-full flex flex-col justify-center">
+      <!-- Title -->
+      <h1 class="mb-6 my-20 max-w-3xl text-4xl font-bold md:mb-10 md:text-6xl lg:mb-12">
+        Your AI Assistant that Understands Books, <br>
+        Not the Web
+      </h1>
+      <p class="mb-6 line-clamp-3 break-words">
+        Dive deep into any book and get insightful, context-based <br>
+        responses—without any reliance on internet searches.
+      </p>
+      <!-- Buttons -->
+      <div class="flex items-stretch mt-8">
+        <a href="#" class="mr-6 rounded-md bg-black px-8 py-4 text-center font-semibold text-white lg:mr-8">Get Started</a>
+      </div>
     </div>
-
-    <!--Call to action-->
-    <div class="container mt-3">
-        <div class="p-5 text-center bg-body-tertiary rounded-3 jumbotron">
-          <h1 class="text-body-emphasis">Start Exploring Books Like Never Before!</h1>
-          <p class="col-lg-8 mx-auto fs-5 text-muted">
-            Learn More – Discover how Bookreply can help you achieve your reading and learning goals.
-            You don't need to sign-up for using BookReply, try now!
+  </div>
+    
+    <!--Hero buttom-->
+    <div class="mx-auto max-w-7xl px-5 py-12 md:px-10 md:py-20">
+      <!-- Component -->
+      <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+        <!-- Image -->
+        <div class="flex justify-center lg:justify-start lg:w-1/2 lg:ml-[-10px]">
+          <img src="assets/2149765701.jpg" alt="" class="hero-image mx-auto inline-block h-full w-full max-w-xl object-cover" />
+        </div>
+        <!-- Text -->
+        <div class="py-20 max-w-xl text-center lg:text-left lg:max-w-xs lg:ml-20 lg:mr-0">
+          <!-- Title -->
+          <h3 class="text-4xl font-extrabold text-black md:text-3xl lg:text-5xl leading-tight lg:leading-snug">
+            What is Bookreply?
+          </h3>
+          <!-- Divider -->
+          <div class="my-6 w-16 border-t border-black mx-auto lg:mx-0"></div>
+          <p class="text-sm text-gray-500">
+            Bookreply is an advanced AI assistant that reads and understands the content of books to provide you with tailored answers, summaries, and insights. Say goodbye to vague search engine results, and get responses rooted in the actual text.
           </p>
-          <div class="d-inline-flex gap-2 mb-5">
-            <button class="d-inline-flex align-items-center btn btn-light btn-lg px-4 rounded-pill" type="button">
-             Start Chat
-            </button>
+          <br />
+          <ul class="text-sm">
+            <li>
+              <p class="font-bold">Contextual Responses</p> Get answers based on what’s in the book—not external data.
+            </li>
+            <li>
+              <p class="font-bold">Tailored Insights</p> Whether you're looking for specific quotes, thematic analysis, or general overviews, Bookreply tailors its responses to your needs.
+            </li>
+            <li>
+              <p class="font-bold">Accuracy Over Guesswork</p> Unlike typical AI tools, Bookreply doesn’t pull from random online sources. Everything is based on the book itself.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+  </header>
+  
+<!--Features-->
+<section id="features">
+    <!-- Container -->
+    <div class="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-20">
+      <!-- Component -->
+      <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+        <!-- Item -->
+        <div class="py-20">
+          <h2 class="mb-6 text-3xl font-bold md:mb-10 md:text-5xl lg:mb-12"> Key Features </h2>
+          <ul class="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
+            <li class="flex flex-col p-5">
+              <img src="assets/analysis-analytics-data-svgrepo-com.svg" alt="" class="mb-4 object-cover inline-block h-10 w-10 rounded-full " />
+              <p class="mb-4 font-semibold">AI-Powered Book Analysis</p>
+              <p class="text-sm text-gray-500"> Analyze any book in your library and generate relevant 
+                responses based on the book's content. </p>
+            </li>
+            <li class="flex flex-col p-5">
+              <img src="assets/search-engine-svgrepo-com.svg" alt="" class="mb-4 object-cover inline-block h-10 w-10 rounded-full " />
+              <p class="mb-4 font-semibold">Customizable Queries</p>
+              <p class="text-sm text-gray-500"> Ask specific questions about plot details, character development, themes, and much more, 
+                and receive answers grounded in the book's content. </p>
+            </li>
+            <li class="flex flex-col p-5">
+              <img src="assets/books-svgrepo-com.svg" alt="" class="mb-4 object-cover inline-block h-10 w-10 rounded-full " />
+              <p class="mb-4 font-semibold">Built-In Library</p>
+              <p class="text-sm text-gray-500"> Access a curated collection of books directly within Bookreply. 
+                With Pinecone.ai integration, all your questions are answered using the actual text from the books in the library. </p>
+            </li>
+            <li class="flex flex-col p-5">
+              <img src="assets/yin-and-yang-svgrepo-com.svg" alt="" class="mb-4 object-cover inline-block h-5 w-10 rounded-full " />
+              <p class="mb-4 font-semibold">Multi-Genre Support</p>
+              <p class="text-sm text-gray-500"> From fiction to non-fiction, textbooks to self-help, Bookreply supports all genres and offers 
+                unique insights tailored to each. </p>
+            </li>
+          </ul>
+        </div>
+        <!-- Item -->
+        <div>
+          <img src="assets/smiling-woman-scrolling-laptop-check-social-media-feed_482257-111833.jpg" alt="" class="hero-image mx-auto inline-block h-full w-full max-w-xl object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--how it works-->
+<section>
+    <!-- Container -->
+    <div id="how-it-works"  class="mx-auto w-full px-5 py-12 md:px-10 md:py-16 lg:py-20 max-w-7xl">
+      <!-- Heading -->
+      <h2 class="mx-auto mb-12 text-center text-3xl max-w-sm md:max-w-xl font-bold md:mb-28 md:text-5xl"> How it works? </h2>
+      <!-- How it Works -->
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+        <!-- Item -->
+        <div class="bg-gray-100 w-full p-6 rounded-lg  flex items-center lg:-mt-30 relative">
+          <div class="flex-shrink-0 bg-gray-300 p-4 rounded-full">
+            <img src="assets/box-svgrepo-com.svg" class="h-8" alt="">
+          </div>
+          <div class="ml-4">
+            <p class="text-lg font-semibold"> Select Your Book </p>
+            <p>Ask the AI about the books in our library, and it will 
+              provide a list of available titles for you to explore.</p>
+          </div>
+          <div class="absolute top-0 right-10 bg-white border-2 border-gray-100 rounded-full h-8 w-8 flex items-center justify-center -mt-4 -mr-4">
+            <span class="text-gray-700 font-bold">1</span>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="bg-gray-100 w-full p-6 rounded-lg  flex items-center md:transform md:translate-y-14 relative">
+          <div class="flex-shrink-0 bg-gray-300 p-4 rounded-full">
+            <img src="assets/ask.svg" class="h-8" alt="">
+          </div>
+          <div class="ml-4">
+            <p class="text-lg font-semibold"> Ask Your Question </p>
+            <p>Whether you’re curious about character motivations or the historical context of a passage, simply ask.</p>
+          </div>
+          <div class="absolute top-0 right-10 bg-white border-2 border-gray-100 rounded-full h-8 w-8 flex items-center justify-center -mt-4 -mr-4">
+            <span class="text-gray-700 font-bold">2</span>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="bg-gray-100 w-full p-6 rounded-lg  flex items-center md:transform md:translate-y-28 relative">
+          <div class="flex-shrink-0 bg-gray-300 p-4 rounded-full">
+            <img src="assets/check-svgrepo-com.svg" class="h-8" alt="">
+          </div>
+          <div class="ml-4">
+            <p class="text-lg font-semibold"> Get AI-Powered Answers </p>
+            <p>Receive accurate, context-rich responses based solely on the content within the book, without external data or bias.</p>
+          </div>
+          <div class="absolute top-0 right-10 bg-white border-2 border-gray-100 rounded-full h-8 w-8 flex items-center justify-center -mt-4 -mr-4">
+            <span class="text-gray-700 font-bold">3</span>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+<br>
 
-    
-      <!--Footer-->
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="#features" class="nav-link px-2 text-body-secondary">Features</a></li>
-          <li class="nav-item"><a href="#how-it-works" class="nav-link px-2 text-body-secondary">How It Works</a></li>
-          <li class="nav-item"><a href="#benefits" class="nav-link px-2 text-body-secondary">Benefits</a></li>
-        </ul>
-          <p class="text-center">&copy; 2024 BookReply. All Rights Reserved.</p>
-      </footer>
+<!--Benefits-->
+<section>
+    <!-- Container -->
+    <div class="pt-48">
+      <!-- Component -->
+      <div class="relative py-16 md:py-24 lg:py-32">
+        <!-- Item -->
+        <div class="sticky top-0 -mt-48 mb-48 rounded-t-[46px] border-t border-black bg-white px-5 py-10 sm:px-20">
+          <div class="mb-14 mt-20 flex gap-8 text-2xl font-bold">
+            <p>01</p>
+            <p>Precision</p>
+          </div>
+          <div class="flex flex-col-reverse gap-8 sm:gap-20 lg:flex-row lg:items-center">
+            <div class="max-w-2xl">
+              <img src="assets/kitap-lap.jpg" alt="" />
+            </div>
+            <div class="max-w-2xl">
+              <h2 class="mb-4 text-3xl font-bold md:text-5xl">Get the Right Answers Every Time</h2>
+              <p class="text-sm text-[#636262] sm:text-base">
+                Unlike traditional search engines that provide broad, often irrelevant results, Bookreply delivers 
+                accurate, book-specific answers to your queries. With its deep understanding of the content, it 
+                pulls information directly from the text, ensuring that you get the most relevant and precise answers 
+                every time. No more wasting time sifting through pages or multiple sources to find what you 
+                need—Bookreply gets straight to the point.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="sticky top-24 -mt-24 mb-24 rounded-t-[46px] border-t border-black bg-white px-5 py-10 sm:px-20">
+          <div class="mb-14 flex gap-8 text-2xl font-bold">
+            <p>02</p>
+            <p>Enhanced Learning</p>
+          </div>
+          <div class="flex flex-col-reverse gap-8 sm:gap-20 lg:flex-row lg:items-center">
+            <div class="max-w-2xl">
+              <img src="assets/cute-girl-studying-computer-home_1303-25828.jpg" alt="" />
+            </div>
+            <div class="max-w-2xl">
+              <h2 class="mb-4 text-3xl font-bold md:text-5xl"> Unlock Deeper Understanding </h2>
+              <p class="ext-sm text-[#636262] sm:text-base">
+                Bookreply is an invaluable tool for students, researchers, and avid readers who want to gain a deeper 
+                understanding of a text. By providing in-depth, context-based analysis and targeted insights, it 
+                enhances the learning experience. Whether you're preparing for an exam, conducting research, or 
+                simply reading for pleasure, Bookreply offers the support you need to truly engage with and 
+                comprehend the material.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="sticky top-48 rounded-t-[46px] border-t border-black bg-white px-5 py-10 sm:px-20">
+          <div class="mb-14 flex gap-8 text-2xl font-bold">
+            <p>03</p>
+            <p>AI-Driven Expertise</p>
+          </div>
+          <div class="flex flex-col-reverse gap-8 sm:gap-20 lg:flex-row lg:items-center">
+            <div class="max-w-2xl">
+              <img src="assets/youngfemale-white-shirt-black-bag-holding-copybook-with-laptop-blue_140725-30297.jpg" alt="" />
+            </div>
+            <div class="max-w-2xl">
+              <h2 class="mb-4 text-3xl font-bold md:text-5xl">Next-Level Literary Analysis</h2>
+              <p class="ext-sm text-[#636262] sm:text-base">
+                Bookreply harnesses the power of AI to interpret literature at a level beyond simple summaries. 
+                Fine-tuned specifically for literary analysis, it provides thoughtful insights that can enhance 
+                your understanding of a text's themes, characters, and underlying messages. Bookreply goes beyond 
+                the surface level, offering interpretations and analysis that would typically require hours of 
+                study—saving you time and effort while improving your literary expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<!--FAQ-->
+  
+<section>
+    <!-- Container -->
+  <div id="FAQs" class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-5 py-16 md:px-10 md:py-20">
+    <!-- Component -->
+    <div class="mx-auto flex max-w-xl flex-col items-center justify-center px-6 text-center lg:max-w-3xl lg:px-10">
+      <h1 class="mx-auto text-center font-bold text-black text-3xl lg:text-4xl">Frequently Asked Questions</h1>
+      <p class="font-inter mt-4 max-w-xl px-5 text-center text-base font-light text-gray-500 lg:max-w-lg">
+        Got questions? We've got answers! Explore the most commonly asked questions about Bookreply and learn 
+        how to make the most out of its features.
+      </p>
+    </div>
+    <!-- FAQs -->
+    <div class="mx-auto w-full max-w-4xl">
+      <!-- FAQ Block -->
+      <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+        <div class="max-w-3xl">
+          <h2 class="font-bold text-black text-xl">How does Bookreply work?</h2>
+          <p id="faq1" class="hidden font-light text-gray-500 mt-4">
+            Bookreply uses AI technology to analyze the content of the books available 
+            in its built-in library. When you ask a question, it searches the book's text 
+            to provide accurate and context-specific responses.
+          </p>
+        </div>
+        <!-- Toggle Button -->
+        <button onclick="toggleFaq('faq1', this)" class="absolute right-5 top-9">
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="white"></circle>
+            <path d="M7.05078 12H16.9508" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path id="vertical-line" d="M12 7.05005V16.95" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!--soru 2-->
+      <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+        <div class="max-w-3xl">
+          <h2 class="font-bold text-black text-xl">Can I upload my own books to Bookreply?</h2>
+          <p id="faq2" class="hidden font-light text-gray-500 mt-4">
+            Currently, Bookreply only works with the preloaded library of books. We’re constantly 
+            expanding the selection, so let us know if there’s a specific book you’d like us to add!
+          </p>
+        </div>
+        <!-- Toggle Button -->
+        <button onclick="toggleFaq('faq2', this)" class="absolute right-5 top-9">
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="white"></circle>
+            <path d="M7.05078 12H16.9508" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path id="vertical-line" d="M12 7.05005V16.95" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!--soru 3-->
+      <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+        <div class="max-w-3xl">
+          <h2 class="font-bold text-black text-xl">What kind of questions can I ask Bookreply?</h2>
+          <p id="faq3" class="hidden font-light text-gray-500 mt-4">
+            You can ask anything related to the book, such as plot details, character development, 
+            thematic analysis, or even specific passages. Whether you’re preparing for an exam or 
+            diving deeper into a story, Bookreply is here to help!
+          </p>
+        </div>
+        <!-- Toggle Button -->
+        <button onclick="toggleFaq('faq3', this)" class="absolute right-5 top-9">
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="white"></circle>
+            <path d="M7.05078 12H16.9508" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path id="vertical-line" d="M12 7.05005V16.95" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!--soru 4-->
+      <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+        <div class="max-w-3xl">
+          <h2 class="font-bold text-black text-xl">Is Bookreply suitable for all genres?</h2>
+          <p id="faq4" class="hidden font-light text-gray-500 mt-4">
+            Yes! Bookreply supports a variety of genres, including fiction, non-fiction, 
+            self-help, and academic texts. Its insights are tailored to the unique content of each book.
+          </p>
+        </div>
+        <!-- Toggle Button -->
+        <button onclick="toggleFaq('faq4', this)" class="absolute right-5 top-9">
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="white"></circle>
+            <path d="M7.05078 12H16.9508" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path id="vertical-line" d="M12 7.05005V16.95" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+
+
+    </div> 
+</section>
+
+<!--Call to action--> 
+<section>
+  <!-- Container -->
+  <div class="px-5 py-16 md:px-10 md:py-20">
+    <!-- Component -->
+    <div class="bg-gradient-to-t from-gray-300 to-white-500 mx-auto w-full max-w-7xl px-4 py-32 text-center relative overflow-hidden">
+      <!-- Abstract Shapes with Pastel Colors -->
+       <!--
+        <div class="absolute top-20 left-10 w-48 h-48 border-4 border-indigo-300 opacity-30  rounded-full z-0"></div>
+      <div class="absolute top-60 left-1/4 w-48 h-48 border-4 border-gray-300 opacity-25 rounded-xl transform rotate-45 z-0"></div>
+        <div class="absolute bottom-10 right-10 w-56 h-56 border-4 border-purple-300 opacity-20 rounded-t-full z-0"></div>
+      <div class="absolute top-40 right-20 w-32 h-32 border-4 border-green-200 opacity-30 rounded-full z-0"></div>
+       -->
+       <div class="absolute top-20 left-10 w-48 h-48 border-4 border-white-300  rounded-xl transform rotate-45 z-0"></div>
+       <div class="absolute bottom-0 left-1/4 w-48 h-48 border-4 border-white-300  rounded-xl transform rotate-45 z-0"></div>
+       <div class="absolute bottom-10 right-10 w-48 h-48 border-4 border-white-300  rounded-xl transform rotate-45 z-0"></div>
+       <div class="absolute top-40 right-20 w-48 h-48 border-4 border-white-300  rounded-xl transform rotate-45 z-0"></div>
+
+       
+
+
+      <!-- Content -->
+      <h2 class="mx-auto mb-6 max-w-3xl text-3xl font-bold md:mb-10 md:text-5xl lg:mb-12 z-10">
+        Start Exploring Books Like Never Before!
+      </h2>
+      <p class="mx-auto mb-6 max-w-xl text-sm text-gray-500 sm:text-base md:mb-12 z-10">
+        Learn More – Discover how Bookreply can help you achieve your reading and learning goals. 
+        You don't need to sign-up for using BookReply, try now!
+      </p>
+      <a href="https://signin-page-by-asomiddin.netlify.app/" class="mb-4 inline-block items-center bg-black px-6 py-3 text-center font-semibold text-white z-10">
+        Get Started
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!--Footer-->
+<footer class="block">
+    <!-- Container -->
+    <div class="py-16 md:py-20 mx-auto w-full max-w-7xl px-5 md:px-10">
+      <!-- Component -->
+      <div class="flex-col flex items-center">
+        <div class="text-center font-semibold">
+          <a href="#" class="inline-block px-6 py-2 font-normal text-black transition hover:text-blue-600"> About </a>
+          <a href="#features" class="inline-block px-6 py-2 font-normal text-black transition hover:text-blue-600"> Features </a>
+          <a href="#how-it-works" class="inline-block px-6 py-2 font-normal text-black transition hover:text-blue-600"> How it works? </a>
+          <a href="#FAQs" class="inline-block px-6 py-2 font-normal text-black transition hover:text-blue-600"> FAQs </a>
+          <a href="#FAQs" class="inline-block px-6 py-2 font-normal text-black transition hover:text-blue-600"> Terms & Conditions </a>
+        </div>
+        <div class="mb-8 mt-8 border-b border-gray-300 w-48"></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(faqId, button) {
+    // İçeriği aç/kapat
+    const faqContent = document.getElementById(faqId);
+    faqContent.classList.toggle('hidden');
+
+    // SVG içindeki '+' ve '-' değişimi
+    const verticalLine = button.querySelector('#vertical-line');
+    if (faqContent.classList.contains('hidden')) {
+      // '+' Göster
+      verticalLine.style.display = 'block';
+    } else {
+      // '-' Göster
+      verticalLine.style.display = 'none';
+    }
+  }
+  </script>
 </body>
 </html>
