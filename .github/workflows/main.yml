@@ -3,37 +3,41 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04 
+    runs-on: ubuntu-22.04  
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2 
+        uses: actions/checkout@v2  
 
       - name: Set up Node.js (optional, for build steps)
         uses: actions/setup-node@v2
         with:
-          node-version: '18' 
+          node-version: '18'  
 
       - name: Set git user info
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Set git remote URL
+      - name: Set git remote URL with token
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git  # Ensure correct token usage
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git  # Explicitly use the GitHub token for authentication
 
       - name: Build your project (optional, if you need to build first)
         run: |
           # Add your build commands here (e.g., npm run build for Node.js projects)
           echo "Building project..."
 
-      - name: Commit changes to GitHub Pages (push to main branch)
-        run: |
-          git add .  # Stage changes
-          git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"  # Avoid failure if no changes to commit
-          git push origin main  # Push to main branch (GitHub Pages serves content from here)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  
+          publish_dir: ./  
+          publish_branch: gh-pages  
+          allow_empty_commit: false  
+          force_orphan: false
+          disable_nojekyll: true
