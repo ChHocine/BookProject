@@ -3,11 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main  
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04  
+    runs-on: ubuntu-22.04 
 
     steps:
       - name: Checkout repository
@@ -26,11 +26,6 @@ jobs:
       - name: Set git remote URL with token
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git  # Explicitly use the GitHub token for authentication
-
-      - name: Build your project (optional, if you need to build first)
-        run: |
-          # Add your build commands here (e.g., npm run build for Node.js projects)
-          echo "Building project..."
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
