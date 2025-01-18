@@ -7,11 +7,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04 
+    runs-on: ubuntu-22.04  
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  
+        uses: actions/checkout@v3 
 
       - name: Set up Node.js (optional, for build steps)
         uses: actions/setup-node@v2
@@ -35,4 +35,4 @@ jobs:
           publish_branch: gh-pages  
           allow_empty_commit: false  
           force_orphan: false
-          disable_nojekyll: true
+          disable_nojekyll: true  
