@@ -22,6 +22,11 @@ jobs:
           git status
           git branch -a
           git remote -v
+          
+      - name: Set git user info
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
       
       - name: Set git remote URL
         run: |
