@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2 
+
+      - name: Set up Node.js (optional, for build steps)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  
+
+      - name: Set git user info
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Build your project (optional, if you need to build first)
+        run: |
+          # Add your build commands here (e.g., npm run build for Node.js projects)
+          echo "Building project..."
+      
+      - name: Deploy to GitHub Pages (using Git commands)
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git add .  # Add all changes
+          git commit -m "Deploy to GitHub Pages"  # Commit the changes
+          git push origin main  # Push changes to the main branch (GitHub Pages will serve from this branch)
