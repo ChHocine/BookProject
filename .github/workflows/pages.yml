@@ -7,22 +7,27 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
       - name: Set up Node.js (optional, for build steps)
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '18'
 
+      - name: Debug Repository State
+        run: |
+          git status
+          git branch -a
+          git remote -v
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./ 
+          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          publish_dir: ./
           publish_branch: gh-pages
           allow_empty_commit: false
           force_orphan: false
